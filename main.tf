@@ -1,8 +1,5 @@
 # Specify the provider and access details
-module "vpc_module" {
-  source = "./vpc_module"
-  
-}
+
 provider "aws" {
   region = "${var.aws_region}"
 }
@@ -19,32 +16,32 @@ locals {
   
   elb = {
     "default"="terraform-example-stack-elb-default"
-    "dev"="terraform-example-stack-elb-dev"
+    "des"="terraform-example-stack-elb-dev"
     "homol"="terraform-example-stack-elb-homol"
   }
   instances = {
     "default"="nginx-%03d-stack-default"
-    "dev"="nginx-%03d-stack-dev"
+    "des"="nginx-%03d-stack-dev"
     "homol"="nginx-%03d-stack-homol"
   }
   security = {
     "default"="allow-ssh-default"
-    "dev"="allow-ssh-stack-dev"
+    "des"="allow-ssh-stack-dev"
     "homol"="allow-ssh-stack-homol"
   }
   aws_iam_role_ecr = {
     "default"="ecr_readOnly_role_default"
-    "dev"="ecr_readOnly_role_dev"
+    "des"="ecr_readOnly_role_dev"
     "homol"="ecr_readOnly_role_homol"
   }
   ecr_readOnly_profile = {
     "default"="ecr_readOnly_profile_default"
-    "dev"="ecr_readOnly_profile_dev"
+    "des"="ecr_readOnly_profile_dev"
     "homol"="ecr_readOnly_profile_homol"
   }
   aws_iam_role_policy = {
     "default"="aws_iam_role_policy_default"
-    "dev"="aws_iam_role_policy_dev"
+    "des"="aws_iam_role_policy_dev"
     "homol"="aws_iam_role_policy_homol"
   }
   
