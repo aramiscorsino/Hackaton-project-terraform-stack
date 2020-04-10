@@ -6,7 +6,7 @@ phases:
     commands: 
       - apt-get update -y
       - apt-get install -y jq
-      - terraformImage="hashicorp/terraform:0.12.23"
+      - terraformImage="hashicorp/terraform:0.12.24"
       - docker pull $terraformImage
       - PROJ_NAME="$PROJETCT_NAME"
       - REPOSITORY_URI="$ECR_ADDRESS"
@@ -22,7 +22,6 @@ phases:
       - dockerterraform="docker run --rm -w /app  -v $PWD:/app -v $PWD/.aws:/root/.aws -v $PWD/.ssh:/root/.ssh -e PROJ_NAME=$PROJ_NAME $terraformImage"
       - $dockerterraform init 
       - $dockerterraform workspace select $STAGE || $dockerterraform workspace new $STAGE
-      - $dockerterraform destroy -var ECR_REGISTRY="${REPOSITORY_URI}" -auto-approve
       - $dockerterraform plan -var ECR_REGISTRY="${REPOSITORY_URI}" -out plan.out
       - $dockerterraform apply -var ECR_REGISTRY="${REPOSITORY_URI}" -auto-approve
       - elb=$($dockerterraform output elb_public)
