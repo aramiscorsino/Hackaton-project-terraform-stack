@@ -1,4 +1,8 @@
 # Specify the provider and access details
+module "vpc_module" {
+  source = "./vpc_module"
+  
+}
 provider "aws" {
   region = "${var.aws_region}"
 }
