@@ -16,32 +16,32 @@ locals {
   
   elb = {
     "default"="terraform-example-stack-elb-default"
-    "des"="terraform-example-stack-elb-dev"
+    "des"="terraform-example-stack-elb-des"
     "homol"="terraform-example-stack-elb-homol"
   }
   instances = {
     "default"="nginx-%03d-stack-default"
-    "des"="nginx-%03d-stack-dev"
+    "des"="nginx-%03d-stack-des"
     "homol"="nginx-%03d-stack-homol"
   }
   security = {
     "default"="allow-ssh-default"
-    "des"="allow-ssh-stack-dev"
+    "des"="allow-ssh-stack-des"
     "homol"="allow-ssh-stack-homol"
   }
   aws_iam_role_ecr = {
     "default"="ecr_readOnly_role_default"
-    "des"="ecr_readOnly_role_dev"
+    "des"="ecr_readOnly_role_des"
     "homol"="ecr_readOnly_role_homol"
   }
   ecr_readOnly_profile = {
     "default"="ecr_readOnly_profile_default"
-    "des"="ecr_readOnly_profile_dev"
+    "des"="ecr_readOnly_profile_des"
     "homol"="ecr_readOnly_profile_homol"
   }
   aws_iam_role_policy = {
     "default"="aws_iam_role_policy_default"
-    "des"="aws_iam_role_policy_dev"
+    "des"="aws_iam_role_policy_des"
     "homol"="aws_iam_role_policy_homol"
   }
   
