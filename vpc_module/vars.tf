@@ -11,3 +11,7 @@ variable "subnet_escale" {
 variable "AWS_REGION" {
   default = "us-east-1"
 }
+
+variable "project" {
+  default = "fiap-lab"
+}
